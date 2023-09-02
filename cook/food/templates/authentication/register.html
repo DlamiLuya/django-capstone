@@ -1,0 +1,11 @@
+<!--This is the user registration page-->
+<h3>Register here</h3>
+<hr>
+
+<!--Create a predefined form from django that allows the user to register and submit their registration to the django database-->
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Register</button>
+</form>

@@ -1,0 +1,19 @@
+<!--This page is the sites login page -->
+<h1> Login as User </h1>
+<!--Define a link that will take the user to the user registration page-->
+<a href = "register">Create user</a>
+
+<!--Define a form that will allow the user to input their username and password to log in-->
+<form action="{% url 'food:authenticate_user' %}" method="post">
+    {% csrf_token %}
+
+    <label>Username</label>
+    <input type="text" name="username" placeholder="User" required>
+    <br/><br/>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <br/><br/>
+    
+    <input type="submit" value="Login" />
+</form>

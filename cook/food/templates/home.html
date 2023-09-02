@@ -1,0 +1,80 @@
+{% load static %}<!--Loading all static files-->
+<!--A list of all recipes in the database-->
+
+<head>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<!--Here are the links to the home page, the about page, in a well divided fashion using bootstrap and stylng-->
+<header style="background-color: darkcyan;">
+    <div class="row">
+    <div class="col-md-1">
+        <h1 style="font-family: cursive; text-align: left;"><a href = 'home' style="color: black;">food</a></h1>
+    </div>
+    <div class="col-md-8">
+        
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = "about" style="color: black;">about</a></h5>
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = "login" style="color: black;">login</a></h5>
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = 'logout' style="color: black;">logout</a></h5>
+    </div>
+    </div>
+</header>
+
+<!--Devide a row which will have the sub-headings of the page with styeling, This will also have the welcome user text-->
+<div class="row" style="border: 20px; border-color: black; background-color: aliceblue;">
+    <h1 style="text-align: left;">Welcome {{username}}</h1>
+    <h1 style="
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;">recipes</h1>
+</div>
+
+<!--Internal styling to make all pictires in the home page bigger apun hovering-->
+<style>
+    img:hover{
+        transform: scale(1.15);
+        transition: 1s;
+    }
+</style>
+<body style="background-image: url('{%static 'images/kitchen.jpg'%}');">
+<!--Define a row that will have the recipes-->
+<div class="row">
+    <!--Define a column of 1 which will be empty-->
+    <div class="col-md-4">
+        
+    </div>
+    <!--Define a column of 4 which will house the recipe picture, title and bio for viewing by the user as recipe options-->
+    <div class="col-md-4" style="background-color: antiquewhite;">
+        <ul><!--List the recipes with their pictures, title and bio.-->
+            {% for recipe in recipe_list %}
+                
+                    <img src =  "{{recipe.food_image.url}}"  
+                    width="250"
+                    height="400" class="card-img-top" class="img-back"/>
+                    <div class="card-body">
+                        <a href = '{{ recipe.id }}/recipe'>
+                            {{ recipe.title }} 
+                        </a><br>{{recipe.bio}} <hr style="size: 100;">
+                    </div>
+
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        
+    </div>
+</div>
+</body>
+<!--Create a footer that will have the below information-->
+<footer style="background-color: darkcyan;">
+    <div class="row">
+        <h6>by: Luyanda Dlamini for HyperionDev as part of their tasks</h6>
+        <h6 style="text-align: center;">These recepis are inspired by foods i'll probabaly never cook</h6>
+    </div>
+</footer>

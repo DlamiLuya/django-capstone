@@ -1,0 +1,53 @@
+{% load static %}<!--Load static files-->
+<!--A list of all recipes in the database-->
+
+<head>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<!--Here are the links to the home page, the about page, in a well divided fashion using bootstrap and stylng-->
+<header style="background-color: darkcyan;">
+    <div class="row">
+    <div class="col-md-1">
+        <h1 style="font-family: cursive; text-align: left;"><a href = 'home' style="color: black;">food</a></h1>
+    </div>
+    <div class="col-md-8">
+        
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = 'about' style="color: black;">about</a></h5>
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = "login" style="color: black;">login</a></h5>
+    </div>
+    <div class="col-md-1">
+        <h5 style="font-family: cursive; text-align: right;"><a href = 'logout' style="color: black;">logout</a></h5>
+    </div>
+    </div>
+</header>
+<body style="background-image: url('{%static 'images/kitchen.jpg'%}');">
+<!--Divide a row that will have the websites about information-->
+<div class="row">
+    <!--Divide columns as to have the paragraph of about information centered to make it more aestetically pleasing-->
+    <div class="col-md-4">
+    
+    </div>
+    <div class="col-md-4" style="background-color: aliceblue;">
+        <p style="text-align: center; font-family: 'Times New Roman', Times, serif;">
+            This food magazine will teach you how to make quick and easy recipes for first time cooks, structured to make the nicest of meals simple and quick for your needs. When you need to feed the family or kids, these are the easy dinner recipes you turn to time and time again. With lots of healthy, quick, vegetarian, chicken, and budget-friendly ideas, there’s something for everyone.
+        </p>
+    </div>
+    <div class="col-md-4">
+    
+    </div>
+</div>
+</body>
+
+<!--Create a footer that will have the below information-->
+<footer style="background-color: darkcyan;">
+    <div class="row">
+        <h6>by: Luyanda Dlamini for HyperionDev as part of their tasks</h6>
+        <h6 style="text-align: center;">These recepis are inspired by foods i'll probabaly never cook</h6>
+    </div>
+</footer>
